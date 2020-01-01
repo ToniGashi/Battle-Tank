@@ -20,10 +20,13 @@ private:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	void AimTowardsCrosshair();
-	bool GetSightRayHitLocation(FVector& a) const;
-	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+	bool GetSightRayHitLocation(FVector& a);
+	bool GetLookVectorHitLocation(FVector a, FVector& HitLocation);
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection);
 	UPROPERTY(EditAnywhere)
 		double CrossHairXLocation = 0.5;
 	UPROPERTY(EditAnywhere)
 		double CrossHairYLocation = 0.333333; 
+	UPROPERTY(EditAnywhere)
+	int32 LineTraceRange = 1000000; // since unreal unit is in CM and we need it as 10km
 };
