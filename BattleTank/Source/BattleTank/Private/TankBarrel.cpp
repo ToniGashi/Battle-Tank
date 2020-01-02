@@ -2,7 +2,7 @@
 
 
 #include "TankBarrel.h"
-#include "math.h"
+
 void UTankBarrel::Elevate(float RelativeSpeed)
 {
 	RelativeSpeed = FMath::Clamp<float>(RelativeSpeed, -1, 1);
