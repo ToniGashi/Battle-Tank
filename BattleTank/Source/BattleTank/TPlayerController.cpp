@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
-#include "BattleTank.h"
 #include "TPlayerController.h"
+#include "BattleTank.h"
+#include "Tank.h"
 
 void ATPlayerController::BeginPlay()
 {
