@@ -24,10 +24,10 @@ private:
 	bool GetSightRayHitLocation(FVector& a);
 	bool GetLookVectorHitLocation(FVector a, FVector& HitLocation);
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection);
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 		double CrossHairXLocation = 0.5;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly)
 		double CrossHairYLocation = 0.333333; 
-	UPROPERTY(EditAnywhere)
-	int32 LineTraceRange = 1000000; // since unreal unit is in CM and we need it as 10km
+	UPROPERTY(EditDefaultsOnly)
+	int32 LineTraceRange = 4000; // since unreal unit is in CM and we need it as 10km
 };
