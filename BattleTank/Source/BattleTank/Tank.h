@@ -7,6 +7,7 @@ class UTankBarrel;
 class UTankTurret;
 class UTankAimingComponent;
 class AProjectile;
+class UTankTrackMeshComponent;
 
 UCLASS()
 class BATTLETANK_API ATank : public APawn
@@ -20,7 +21,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 		void SetBarrelReference(UTankBarrel* BarrelToSet);
 	UFUNCTION(BlueprintCallable, Category = Setup)
-		void SetTurretReferentce(UTankTurret* TankTurret);
+		void SetTurretReference(UTankTurret* TankTurret);
+	UFUNCTION(BlueprintCallable, Category = Setup)
+		void SetTankTrackReference(UTankTrackMeshComponent* TankTrack);
 	UFUNCTION(BlueprintCallable, Category = Action)
 		void Fire();
 
