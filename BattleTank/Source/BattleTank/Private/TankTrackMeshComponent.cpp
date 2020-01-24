@@ -5,6 +5,10 @@
 
 void UTankTrackMeshComponent::SetThrottle(float throttle)
 {
-	auto Name = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s throttle: %f"), *Name, throttle);
+	FVector ForceApplied = GetForwardVector() * throttle * TrackMaxDrivingForce;
+	FVector ForceLocation = GetComponentLocation();
+	if (!GetOwner()->GetRootComponent()) return;
+	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
+	if (TankRoot== nullptr) return;
+	TankRoot->AddForceAtLocation(ForceApplied, ForceLocation);
 }

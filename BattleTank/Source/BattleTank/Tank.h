@@ -4,6 +4,7 @@
 #include "Tank.generated.h" // Put new includes above
 
 class UTankBarrel;
+class UTankMovementComponent;
 class UTankTurret;
 class UTankAimingComponent;
 class AProjectile;
@@ -12,7 +13,6 @@ class UTankTrackMeshComponent;
 UCLASS()
 class BATTLETANK_API ATank : public APawn
 {
-
 	GENERATED_BODY()
 
 public:
@@ -29,6 +29,9 @@ public:
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
+
+	UPROPERTY(BlueprintReadOnly)
+	UTankMovementComponent* TankMovementComponent = nullptr;
 
 private:
 	// Sets default values for this pawn's properties
