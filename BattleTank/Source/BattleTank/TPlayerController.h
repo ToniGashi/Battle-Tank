@@ -29,5 +29,5 @@ private:
 	UPROPERTY(EditDefaultsOnly)
 		double CrossHairYLocation = 0.333333; 
 	UPROPERTY(EditDefaultsOnly)
-	int32 LineTraceRange = 4000; // since unreal unit is in CM and we need it as 10km
+	int32 LineTraceRange = 1000000; // since unreal unit is in CM and we need it as 10km
 };
