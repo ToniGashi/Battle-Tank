@@ -7,17 +7,22 @@
 #include "TPlayerController.generated.h"
 
 class ATank;
+class UTankAimingComponent;
 /**
  * 
  */
 UCLASS()
 class BATTLETANK_API ATPlayerController : public APlayerController
 {
-
 	GENERATED_BODY()
 
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+		ATank* GetControlledTank() const;
+	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
+		void FoundAimingComponent(UTankAimingComponent* AimComp);
+
 private:
-	ATank* GetControlledTank() const;
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 	void AimTowardsCrosshair();
